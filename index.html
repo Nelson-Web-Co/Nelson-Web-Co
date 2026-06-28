@@ -42,7 +42,7 @@
   .btn-secondary:hover { border-color: #fff; }
   .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(59,158,255,0.5), transparent); animation: scrolldown 2s infinite; }
-  @media (max-width: 768px) { .hero-scroll { display: none; } }
+  @media (max-width: 768px) { .hero-scroll { bottom: 0.5rem; } }
   @keyframes scrolldown { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
   /* STATS */
