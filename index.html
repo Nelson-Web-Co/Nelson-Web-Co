@@ -497,22 +497,57 @@
     <div class="section-label">Contact</div>
     <h2>Let's build something great</h2>
     <p>Tell me a bit about your business and what you need. I'll get back to you within 24 hours.</p>
-    <div class="form-group"><label>Your name</label><input type="text" placeholder="e.g. Sarah Williams" /></div>
-    <div class="form-group"><label>Business name</label><input type="text" placeholder="e.g. Nelson Plumbing Co" /></div>
-    <div class="form-group"><label>What do you need?</label>
-      <select>
-        <option>New website</option>
-        <option>Redesign existing site</option>
-        <option>Small fixes</option>
-        <option>Monthly maintenance</option>
-        <option>Custom / large project</option>
-        <option>Not sure yet</option>
-      </select>
-    </div>
-    <div class="form-group"><label>Tell me more</label><textarea placeholder="What does your business do? Any ideas for the site?"></textarea></div>
-    <button class="submit-btn">Send message ⚡</button>
+    <form id="contactForm">
+      <input type="hidden" name="access_key" value="f69facb4-c9a8-493f-a469-3c5edebd75f5" />
+      <input type="hidden" name="subject" value="New enquiry from Nelson Web Co" />
+      <div class="form-group"><label>Your name</label><input type="text" name="name" placeholder="e.g. Sarah Williams" required /></div>
+      <div class="form-group"><label>Business name</label><input type="text" name="business" placeholder="e.g. Nelson Plumbing Co" /></div>
+      <div class="form-group"><label>What do you need?</label>
+        <select name="service">
+          <option>New website</option>
+          <option>Redesign existing site</option>
+          <option>Small fixes</option>
+          <option>Monthly maintenance</option>
+          <option>Custom / large project</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tell me more</label><textarea name="message" placeholder="What does your business do? Any ideas for the site?"></textarea></div>
+      <button type="submit" class="submit-btn" id="submitBtn">Send message ⚡</button>
+      <div id="formMsg" style="margin-top:1rem;font-size:14px;display:none;"></div>
+    </form>
   </div>
 </div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMsg');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const formData = new FormData(this);
+  const response = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  });
+  const data = await response.json();
+  if (data.success) {
+    msg.style.color = '#3b9eff';
+    msg.textContent = '✅ Message sent! I\'ll be in touch within 24 hours.';
+    msg.style.display = 'block';
+    this.reset();
+    btn.textContent = 'Send message ⚡';
+    btn.disabled = false;
+  } else {
+    msg.style.color = '#ff4444';
+    msg.textContent = '❌ Something went wrong. Please try again or email blake@nelsonwebco.co.nz';
+    msg.style.display = 'block';
+    btn.textContent = 'Send message ⚡';
+    btn.disabled = false;
+  }
+});
+</script>
 
 <div class="footer">
   <div class="footer-logo">Nelson<span>Web</span>Co</div>
