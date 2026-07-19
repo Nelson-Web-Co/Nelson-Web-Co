@@ -233,7 +233,7 @@
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="demos.html">Demos</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
@@ -247,7 +247,7 @@
   <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
   <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
-  <a href="#portfolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Portfolio</a>
+  <a href="demos.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Demos</a>
   <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
   <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
 </div>
@@ -451,47 +451,6 @@
   </div>
 </div>
 
-<div class="section" id="portfolio" style="padding-top: 0;">
-  <div class="section-label">Portfolio</div>
-  <h2>Work I've built</h2>
-  <p class="section-sub">Three tiers of demo sites — click through to see exactly what each package looks like live. Every site I build is unique to your business — your colours, your content, your brand. These demos just show what's possible at each level.</p>
-  <div class="portfolio-grid">
-    <div class="portfolio-card fade-up">
-      <div class="portfolio-tag">Starter — From $999</div>
-      <h3>South Build</h3>
-      <p>A clean single page builder website. Mobile friendly, contact form, stats bar and services overview. Perfect for tradies who just need to get online fast.</p>
-      <div class="portfolio-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-      </div>
-      <a href="https://south-build-starter.vercel.app" target="_blank" class="portfolio-btn">View Starter Demo →</a>
-    </div>
-    <div class="portfolio-card fade-up">
-      <div class="portfolio-tag">Standard — From $1,499</div>
-      <h3>South Build</h3>
-      <p>A multi-page builder website with dedicated services, gallery and contact pages. Real photos, Google Maps placeholder and working navigation.</p>
-      <div class="portfolio-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-      </div>
-      <a href="https://south-build-standard.vercel.app" target="_blank" class="portfolio-btn">View Standard Demo →</a>
-    </div>
-    <div class="portfolio-card fade-up">
-      <div class="portfolio-tag">Premium — From $2,199</div>
-      <h3>South Build</h3>
-      <p>The full premium experience. Photo slider, scroll animations, before & after tool, case studies, testimonials, FAQ, hamburger menu and more.</p>
-      <div class="portfolio-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-      </div>
-      <a href="https://south-build-premium.vercel.app" target="_blank" class="portfolio-btn">View Premium Demo →</a>
-    </div>
-  </div>
-</div>
-
 <div class="section" id="about" style="padding-top: 0;">
   <div class="section-label">About</div>
   <h2>Local, honest, straight to the point</h2>
@@ -608,5 +567,23 @@ document.getElementById('contactForm').addEventListener('submit', async function
   animEls.forEach(el => observer.observe(el));
 </script>
 
+
+<a class="scroll-top" id="scrollTop" href="#top">↑</a>
+
+<script>
+  window.addEventListener('scroll', function(){
+    const btn = document.getElementById('scrollTop');
+    if(window.scrollY > 400){ btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  });
+  const animEls = document.querySelectorAll('.from-left, .from-right, .from-bottom');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+      else { e.target.classList.remove('visible'); }
+    });
+  }, { threshold: 0.1 });
+  animEls.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
