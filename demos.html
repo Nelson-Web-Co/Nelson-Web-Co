@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demos | Nelson Web Co</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter', sans-serif; background:#0c0c18; color:#fff; }
+
+  /* NAV */
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 2.5rem; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(8,8,16,0.95); position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
+  .nav-logo { font-size:18px; font-weight:800; color:#fff; text-decoration:none; }
+  .nav-logo span { color:#3b9eff; }
+  .nav-links { display:flex; gap:2rem; }
+  .nav-links a { font-size:13px; color:#fff; text-decoration:none; cursor:pointer; transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:#3b9eff; }
+  .nav-cta { background:#3b9eff; color:#fff; border:none; padding:9px 20px; border-radius:6px; font-size:13px; cursor:pointer; font-weight:700; transition:background 0.2s; text-decoration:none; }
+  .nav-cta:hover { background:#2b8ef0; }
+
+  /* HERO */
+  .hero { padding:80px 2.5rem 60px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .hero-label { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#3b9eff; margin-bottom:16px; }
+  .hero h1 { font-size:clamp(2rem, 5vw, 3.2rem); font-weight:800; margin-bottom:16px; }
+  .hero p { color:rgba(255,255,255,0.55); font-size:1rem; max-width:560px; margin:0 auto; line-height:1.7; }
+
+  /* DEMOS GRID */
+  .demos { padding:60px 2.5rem 100px; max-width:1200px; margin:0 auto; }
+  .demos-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:32px; }
+
+  .demo-card {
+    background:#13131f;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .demo-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+
+  .demo-preview {
+    position:relative; overflow:hidden;
+    height:220px; background:#0a0a14;
+  }
+  .demo-preview iframe {
+    width:200%; height:200%;
+    transform:scale(0.5); transform-origin:top left;
+    border:none; pointer-events:none;
+  }
+  .demo-preview-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 60%, rgba(19,19,31,0.8) 100%);
+  }
+  .demo-tag {
+    position:absolute; top:12px; left:12px;
+    background:rgba(59,158,255,0.15);
+    border:1px solid rgba(59,158,255,0.3);
+    color:#3b9eff; font-size:10px; font-weight:700;
+    letter-spacing:1.5px; text-transform:uppercase;
+    padding:4px 10px; border-radius:20px;
+  }
+
+  .demo-info { padding:24px; }
+  .demo-info h3 { font-size:1.1rem; font-weight:700; margin-bottom:6px; }
+  .demo-info p { color:rgba(255,255,255,0.5); font-size:.88rem; line-height:1.65; margin-bottom:20px; }
+  .demo-footer { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .demo-tech { display:flex; gap:6px; flex-wrap:wrap; }
+  .demo-tech span {
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    color:rgba(255,255,255,0.5);
+    font-size:10px; font-weight:600;
+    padding:3px 8px; border-radius:4px;
+  }
+  .demo-btn {
+    background:#3b9eff; color:#fff;
+    padding:9px 20px; border-radius:6px;
+    font-size:12px; font-weight:700;
+    text-decoration:none; white-space:nowrap;
+    transition:background .2s;
+  }
+  .demo-btn:hover { background:#2b8ef0; }
+
+  /* CTA */
+  .cta { text-align:center; padding:60px 2.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+  .cta h2 { font-size:1.8rem; font-weight:800; margin-bottom:12px; }
+  .cta p { color:rgba(255,255,255,0.5); margin-bottom:28px; }
+  .cta-btn { background:#3b9eff; color:#fff; padding:13px 32px; border-radius:8px; font-size:.95rem; font-weight:700; text-decoration:none; transition:background .2s; }
+  .cta-btn:hover { background:#2b8ef0; }
+
+  /* FOOTER */
+  footer { text-align:center; padding:28px; border-top:1px solid rgba(255,255,255,0.06); color:rgba(255,255,255,0.3); font-size:.82rem; }
+
+  @media (max-width:768px) {
+    .nav-links { display:none; }
+    .demos-grid { grid-template-columns:1fr; }
+    .hero { padding:60px 1.5rem 40px; }
+    .demos { padding:40px 1.5rem 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Nelson<span>Web</span>Co</a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="demos.html" class="active">Demos</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a href="index.html#contact" class="nav-cta">Get a free quote</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Our Work</div>
+  <h1>Demo Sites</h1>
+  <p>Browse through websites we've built. Every site is fully responsive, fast and mobile friendly. Click any demo to see the full live site.</p>
+</div>
+
+<div class="demos">
+  <div class="demos-grid">
+
+    <!-- The Garden Crew -->
+    <div class="demo-card">
+      <div class="demo-preview">
+        <iframe src="https://the-garden-crew.vercel.app" title="The Garden Crew"></iframe>
+        <div class="demo-preview-overlay"></div>
+        <div class="demo-tag">Gardening</div>
+      </div>
+      <div class="demo-info">
+        <h3>The Garden Crew</h3>
+        <p>A clean, natural gardening services website with photo gallery, services section and contact form. Light and professional.</p>
+        <div class="demo-footer">
+          <div class="demo-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <a href="https://the-garden-crew.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pro Coat NZ -->
+    <div class="demo-card">
+      <div class="demo-preview">
+        <iframe src="https://pro-coat-nz.vercel.app" title="Pro Coat NZ"></iframe>
+        <div class="demo-preview-overlay"></div>
+        <div class="demo-tag">Plastering & Painting</div>
+      </div>
+      <div class="demo-info">
+        <h3>Pro Coat NZ</h3>
+        <p>A polished plastering and painting company site with photo slideshow, parallax effects, scroll animations and contact form.</p>
+        <div class="demo-footer">
+          <div class="demo-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <a href="https://pro-coat-nz.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- South Build Starter -->
+    <div class="demo-card">
+      <div class="demo-preview">
+        <iframe src="https://south-build-starter.vercel.app" title="South Build Starter"></iframe>
+        <div class="demo-preview-overlay"></div>
+        <div class="demo-tag">Starter — $999</div>
+      </div>
+      <div class="demo-info">
+        <h3>South Build — Starter</h3>
+        <p>A clean single page builder website. Mobile friendly, contact form, stats bar and services overview. Perfect for tradies getting online fast.</p>
+        <div class="demo-footer">
+          <div class="demo-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <a href="https://south-build-starter.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- South Build Standard -->
+    <div class="demo-card">
+      <div class="demo-preview">
+        <iframe src="https://south-build-standard.vercel.app" title="South Build Standard"></iframe>
+        <div class="demo-preview-overlay"></div>
+        <div class="demo-tag">Standard — $1,499</div>
+      </div>
+      <div class="demo-info">
+        <h3>South Build — Standard</h3>
+        <p>A multi-page builder website with dedicated services, gallery and contact pages. Real photos, Google Maps and working navigation.</p>
+        <div class="demo-footer">
+          <div class="demo-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <a href="https://south-build-standard.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- South Build Premium -->
+    <div class="demo-card">
+      <div class="demo-preview">
+        <iframe src="https://south-build-premium.vercel.app" title="South Build Premium"></iframe>
+        <div class="demo-preview-overlay"></div>
+        <div class="demo-tag">Premium — $2,199</div>
+      </div>
+      <div class="demo-info">
+        <h3>South Build — Premium</h3>
+        <p>The full premium experience. Photo slider, scroll animations, before & after tool, case studies, testimonials, FAQ and more.</p>
+        <div class="demo-footer">
+          <div class="demo-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <a href="https://south-build-premium.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Want a site like one of these?</h2>
+  <p>Get in touch for a free quote — no obligation, no jargon.</p>
+  <a href="index.html#contact" class="cta-btn">Get a Free Quote ⚡</a>
+</div>
+
+<footer>
+  © 2026 Nelson Web Co · Nelson, NZ · <a href="index.html" style="color:rgba(255,255,255,0.4); text-decoration:none;">Back to Home</a>
+</footer>
+
+</body>
+</html>
