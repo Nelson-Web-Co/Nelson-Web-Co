@@ -83,7 +83,7 @@
   .section-sub { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 3rem; max-width: 500px; line-height: 1.7; }
 
   /* SERVICES */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
   .service-card { background: #0c0c18; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s; }
   .service-card:hover { background: #0f0f20; }
   .service-icon { width: 44px; height: 44px; background: rgba(59,158,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 1px solid rgba(59,158,255,0.2); }
@@ -191,7 +191,7 @@
     .nav-links { display: none; }
     .stats { flex-wrap: wrap; }
     .stat-item { min-width: 45%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     .mods-grid { grid-template-columns: 1fr; }
     .maint-grid { grid-template-columns: 1fr; }
@@ -293,17 +293,23 @@
       <p>Built from scratch, mobile-friendly, performance optimised and ready to bring in customers from day one.</p>
       <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">From $999 NZD</div>
     </div>
-    <div class="service-card">
+    <div class="service-card from-bottom delay-2">
       <div class="service-icon">✏️</div>
       <h3>Site Fixes</h3>
       <p>Got something that needs updating or improving on your existing site? From small tweaks to full overhauls — get in touch for a free quote.</p>
       <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
     </div>
-    <div class="service-card from-bottom delay-2">
+    <div class="service-card from-bottom delay-3">
       <div class="service-icon">🔧</div>
       <h3>Maintenance</h3>
       <p>Keep your site fresh and running smoothly with monthly updates, fixes and support.</p>
       <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">From $49/month</div>
+    </div>
+    <div class="service-card from-bottom delay-4">
+      <div class="service-icon">🔍</div>
+      <h3>Basic SEO</h3>
+      <p>Every site includes basic on-page SEO — meta tags, page titles, alt text and Google submission so your site can actually be found.</p>
+      <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Included in every build</div>
     </div>
   </div>
 </div>
@@ -347,6 +353,7 @@
         <li>Services & gallery page</li>
         <li>Photo gallery included</li>
         <li>Custom branding</li>
+        <li>Basic SEO setup</li>
       </ul>
       <div class="pricing-btn featured-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
@@ -364,6 +371,7 @@
         <li>Quote/booking form</li>
         <li>Image gallery</li>
         <li>Priority turnaround</li>
+        <li>Basic SEO setup</li>
       </ul>
       <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
