@@ -68,7 +68,16 @@
   .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
   /* SECTIONS */
-  .section { padding: 5rem 2.5rem; }
+  /* SCROLL REVEAL */
+  .from-left { opacity:0; transform:translateX(-40px); transition:opacity .7s ease, transform .7s ease; }
+  .from-right { opacity:0; transform:translateX(40px); transition:opacity .7s ease, transform .7s ease; }
+  .from-bottom { opacity:0; transform:translateY(30px); transition:opacity .6s ease, transform .6s ease; }
+  .from-left.visible, .from-right.visible, .from-bottom.visible { opacity:1; transform:none; }
+  .delay-1 { transition-delay:.1s; }
+  .delay-2 { transition-delay:.2s; }
+  .delay-3 { transition-delay:.3s; }
+  .delay-4 { transition-delay:.4s; }
+  .delay-5 { transition-delay:.5s; }
   .section-label { font-size: 11px; color: #3b9eff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; font-weight: 700; }
   .section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 0.8rem; letter-spacing: -1px; }
   .section-sub { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 3rem; max-width: 500px; line-height: 1.7; }
@@ -205,6 +214,9 @@
   .mobile-menu a:hover { color: #3b9eff; }
   .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; }
   .float-call { display: none; position: fixed !important; bottom: 140px; right: 20px; width: 54px; height: 54px; background: #3b9eff; border-radius: 50%; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 20px rgba(59,158,255,0.5); z-index: 9999; text-decoration: none; }
+  .scroll-top { position:fixed; bottom:26px; right:26px; z-index:200; width:44px; height:44px; border-radius:50%; background:#3b9eff; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; text-decoration:none; box-shadow:0 4px 14px rgba(59,158,255,0.4); opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; }
+  .scroll-top.visible { opacity:1; pointer-events:all; }
+  .scroll-top:hover { transform:translateY(-3px); }
   .float-top { display: none; position: fixed !important; bottom: 75px; right: 20px; width: 54px; height: 54px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; z-index: 9999; color: #fff; text-decoration: none !important; }
   @media (max-width: 768px) {
     .float-call { display: block; line-height: 54px; text-align: center; }
@@ -264,18 +276,18 @@
 </div>
 
 <div class="stats">
-  <div class="stat-item"><div class="stat-num">3<span>sec</span></div><div class="stat-label">First impression window</div></div>
-  <div class="stat-item"><div class="stat-num">80<span>%</span></div><div class="stat-label">Of searches happen on mobile</div></div>
-  <div class="stat-item"><div class="stat-num">$999</div><div class="stat-label">Starting price, no hidden fees</div></div>
-  <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">NZ wide</div></div>
+  <div class="stat-item from-bottom delay-1"><div class="stat-num">3<span>sec</span></div><div class="stat-label">First impression window</div></div>
+  <div class="stat-item from-bottom delay-2"><div class="stat-num">80<span>%</span></div><div class="stat-label">Of searches happen on mobile</div></div>
+  <div class="stat-item from-bottom delay-3"><div class="stat-num">$999</div><div class="stat-label">Starting price, no hidden fees</div></div>
+  <div class="stat-item from-bottom delay-4"><div class="stat-num">100<span>%</span></div><div class="stat-label">NZ wide</div></div>
 </div>
 
 <div class="section" id="services">
-  <div class="section-label">What we do</div>
-  <h2>Everything your business needs online</h2>
-  <p class="section-sub">Simple packages, transparent pricing. No surprises.</p>
+  <div class="section-label from-left">What we do</div>
+  <h2 class="from-left delay-1">Everything your business needs online</h2>
+  <p class="section-sub from-left delay-2">Simple packages, transparent pricing. No surprises.</p>
   <div class="services-grid">
-    <div class="service-card">
+    <div class="service-card from-bottom delay-1">
       <div class="service-icon">🌐</div>
       <h3>New websites</h3>
       <p>Built from scratch, mobile-friendly, performance optimised and ready to bring in customers from day one.</p>
@@ -287,7 +299,7 @@
       <p>Got something that needs updating or improving on your existing site? From small tweaks to full overhauls — get in touch for a free quote.</p>
       <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
     </div>
-    <div class="service-card">
+    <div class="service-card from-bottom delay-2">
       <div class="service-icon">🔧</div>
       <h3>Maintenance</h3>
       <p>Keep your site fresh and running smoothly with monthly updates, fixes and support.</p>
@@ -297,14 +309,14 @@
 </div>
 
 <div class="section" id="pricing" style="padding-top: 0;">
-  <div class="section-label">Pricing</div>
-  <h2>Honest pricing, no hidden costs</h2>
-  <p class="section-sub">Whether you need a brand new site, a fix-up, or ongoing support — there's an option for you.</p>
+  <div class="section-label from-left">Pricing</div>
+  <h2 class="from-left delay-1">Honest pricing, no hidden costs</h2>
+  <p class="section-sub from-left delay-2">Whether you need a brand new site, a fix-up, or ongoing support — there's an option for you.</p>
 
-  <div class="divider-label"><div class="divider-line"></div><span>New websites</span><div class="divider-line"></div></div>
+  <div class="divider-label from-bottom"><div class="divider-line"></div><span>New websites</span><div class="divider-line"></div></div>
   <div class="pricing-grid">
-    <div class="pricing-card">
-      <div class="pricing-preview">
+    <div class="pricing-card from-bottom delay-1">
+      <div class="pricing-preview from-bottom">
         <iframe src="https://south-build-starter.vercel.app" scrolling="no" loading="lazy"></iframe>
         <a href="https://south-build-starter.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
       </div>
@@ -320,8 +332,8 @@
       </ul>
       <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
-    <div class="pricing-card featured">
-      <div class="pricing-preview">
+    <div class="pricing-card featured from-bottom delay-2">
+      <div class="pricing-preview from-bottom">
         <iframe src="https://south-build-standard.vercel.app" scrolling="no" loading="lazy"></iframe>
         <a href="https://south-build-standard.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
         <div class="pricing-badge" style="position:absolute;top:12px;left:12px;z-index:2;">Recommended</div>
@@ -338,8 +350,8 @@
       </ul>
       <div class="pricing-btn featured-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
-    <div class="pricing-card">
-      <div class="pricing-preview">
+    <div class="pricing-card from-bottom delay-3">
+      <div class="pricing-preview from-bottom">
         <iframe src="https://south-build-premium.vercel.app" scrolling="no" loading="lazy"></iframe>
         <a href="https://south-build-premium.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
       </div>
@@ -370,7 +382,7 @@
     </div>
   </div>
 
-  <div class="divider-label"><div class="divider-line"></div><span>Already have a site?</span><div class="divider-line"></div></div>
+  <div class="divider-label from-bottom"><div class="divider-line"></div><span>Already have a site?</span><div class="divider-line"></div></div>
   <div class="mods-grid">
     <div class="mod-card">
       <div class="service-icon">⚙️</div>
@@ -393,9 +405,9 @@
   </div>
   <p class="rebrand-note">Every existing site is different — get in touch and I'll give you an honest price within 24 hours.</p>
 
-  <div class="divider-label"><div class="divider-line"></div><span>Ongoing maintenance</span><div class="divider-line"></div></div>
+  <div class="divider-label from-bottom"><div class="divider-line"></div><span>Ongoing maintenance</span><div class="divider-line"></div></div>
   <div class="maint-grid">
-    <div class="maint-card">
+    <div class="maint-card from-bottom delay-1">
       <div class="service-icon">🌐</div>
       <h3>Hosting Only</h3>
       <ul class="maint-features">
@@ -416,7 +428,7 @@
       </ul>
       <div class="maint-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">$79/month</div>
     </div>
-    <div class="maint-card">
+    <div class="maint-card from-bottom delay-2">
       <div class="service-icon">✅</div>
       <h3>Full Support</h3>
       <ul class="maint-features">
@@ -513,7 +525,7 @@
 </div>
 
 <div class="contact-section" id="contact">
-  <div class="contact-inner">
+  <div class="contact-inner from-left">
     <div class="section-label">Contact</div>
     <h2>Let's build something great</h2>
     <p>Tell me a bit about your business and what you need. I'll get back to you within 24 hours.</p>
@@ -576,6 +588,25 @@ document.getElementById('contactForm').addEventListener('submit', async function
   <div class="footer-logo">Nelson<span>Web</span>Co</div>
   <div class="footer-copy">© 2026 Nelson Web Co. All rights reserved.</div>
 </div>
+
+<a class="scroll-top" id="scrollTop" href="#top">↑</a>
+
+<script>
+  window.addEventListener('scroll', function(){
+    const btn = document.getElementById('scrollTop');
+    if(window.scrollY > 400){ btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  });
+
+  const animEls = document.querySelectorAll('.from-left, .from-right, .from-bottom');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+      else { e.target.classList.remove('visible'); }
+    });
+  }, { threshold: 0.1 });
+  animEls.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
