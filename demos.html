@@ -37,44 +37,52 @@
     border:1px solid rgba(255,255,255,0.08);
     border-radius:12px;
     overflow:hidden;
+    position:relative;
     transition:transform .3s ease, box-shadow .3s ease;
   }
   .demo-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
 
   .demo-preview {
     position:relative; overflow:hidden;
-    height:220px; background:#0a0a14;
+    height:280px; background:#0a0a14;
   }
   .demo-preview iframe {
     width:200%; height:200%;
     transform:scale(0.5); transform-origin:top left;
     border:none; pointer-events:none;
   }
-  .demo-preview-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(180deg, transparent 60%, rgba(19,19,31,0.8) 100%);
-  }
-  .demo-tag {
-    position:absolute; top:12px; left:12px;
-    background:rgba(59,158,255,0.15);
-    border:1px solid rgba(59,158,255,0.3);
-    color:#3b9eff; font-size:10px; font-weight:700;
-    letter-spacing:1.5px; text-transform:uppercase;
-    padding:4px 10px; border-radius:20px;
-  }
+  .demo-tag { display:none; }
 
-  .demo-info { padding:24px; }
-  .demo-info h3 { font-size:1.1rem; font-weight:700; margin-bottom:6px; }
-  .demo-info p { color:rgba(255,255,255,0.5); font-size:.88rem; line-height:1.65; margin-bottom:20px; }
-  .demo-footer { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .demo-tech { display:flex; gap:6px; flex-wrap:wrap; }
+  /* Hover overlay */
+  .demo-hover {
+    position:absolute; inset:0; z-index:3;
+    background:rgba(10,10,20,0.92);
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    padding:28px; text-align:center;
+    opacity:0; transform:translateY(10px);
+    transition:opacity .3s ease, transform .3s ease;
+  }
+  .demo-card:hover .demo-hover { opacity:1; transform:translateY(0); }
+  .demo-hover h3 { font-size:1.2rem; font-weight:700; color:#fff; margin-bottom:10px; }
+  .demo-hover p { color:rgba(255,255,255,0.7); font-size:.88rem; line-height:1.65; margin-bottom:20px; }
+  .demo-hover-footer { display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; }
+  .demo-tech { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; }
   .demo-tech span {
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.1);
-    color:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    color:rgba(255,255,255,0.8);
     font-size:10px; font-weight:600;
     padding:3px 8px; border-radius:4px;
   }
+  .demo-btn {
+    background:#3b9eff; color:#fff;
+    padding:10px 22px; border-radius:6px;
+    font-size:12px; font-weight:700;
+    text-decoration:none; white-space:nowrap;
+    transition:background .2s; margin-top:8px;
+  }
+  .demo-btn:hover { background:#2b8ef0; }
   .demo-btn {
     background:#3b9eff; color:#fff;
     padding:9px 20px; border-radius:6px;
@@ -123,98 +131,68 @@
 </div>
 
 <div class="demos">
-  <div class="demos-grid">
+    <div class="demos-grid">
 
-    <!-- The Garden Crew -->
     <div class="demo-card">
       <div class="demo-preview">
         <iframe src="https://the-garden-crew.vercel.app" title="The Garden Crew"></iframe>
-        <div class="demo-preview-overlay"></div>
         <div class="demo-tag">Gardening</div>
-      </div>
-      <div class="demo-info">
-        <h3>The Garden Crew</h3>
-        <p>A clean, natural gardening services website with photo gallery, services section and contact form. Light and professional.</p>
-        <div class="demo-footer">
-          <div class="demo-tech">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
+        <div class="demo-hover">
+          <h3>The Garden Crew</h3>
+          <p>A clean, natural gardening services website with photo gallery, services section and contact form. Light and professional.</p>
+          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <a href="https://the-garden-crew.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
         </div>
       </div>
     </div>
 
-    <!-- Pro Coat NZ -->
     <div class="demo-card">
       <div class="demo-preview">
         <iframe src="https://pro-coat-nz.vercel.app" title="Pro Coat NZ"></iframe>
-        <div class="demo-preview-overlay"></div>
         <div class="demo-tag">Plastering & Painting</div>
-      </div>
-      <div class="demo-info">
-        <h3>Pro Coat NZ</h3>
-        <p>A polished plastering and painting company site with photo slideshow, parallax effects, scroll animations and contact form.</p>
-        <div class="demo-footer">
-          <div class="demo-tech">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
+        <div class="demo-hover">
+          <h3>Pro Coat NZ</h3>
+          <p>A polished plastering and painting company site with photo slideshow, parallax effects, scroll animations and contact form.</p>
+          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <a href="https://pro-coat-nz.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
         </div>
       </div>
     </div>
 
-    <!-- South Build Starter -->
     <div class="demo-card">
       <div class="demo-preview">
-        <iframe src="https://south-build-starter.vercel.app" title="South Build Starter"></iframe>
-        <div class="demo-preview-overlay"></div>
+        <iframe src="https://south-build-starter.vercel.app" title="South Build — Starter"></iframe>
         <div class="demo-tag">Starter — $999</div>
-      </div>
-      <div class="demo-info">
-        <h3>South Build — Starter</h3>
-        <p>A clean single page builder website. Mobile friendly, contact form, stats bar and services overview. Perfect for tradies getting online fast.</p>
-        <div class="demo-footer">
-          <div class="demo-tech">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
+        <div class="demo-hover">
+          <h3>South Build — Starter</h3>
+          <p>A clean single page builder website. Mobile friendly, contact form, stats bar and services overview. Perfect for tradies getting online fast.</p>
+          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <a href="https://south-build-starter.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
         </div>
       </div>
     </div>
 
-    <!-- South Build Standard -->
     <div class="demo-card">
       <div class="demo-preview">
-        <iframe src="https://south-build-standard.vercel.app" title="South Build Standard"></iframe>
-        <div class="demo-preview-overlay"></div>
+        <iframe src="https://south-build-standard.vercel.app" title="South Build — Standard"></iframe>
         <div class="demo-tag">Standard — $1,499</div>
-      </div>
-      <div class="demo-info">
-        <h3>South Build — Standard</h3>
-        <p>A multi-page builder website with dedicated services, gallery and contact pages. Real photos, Google Maps and working navigation.</p>
-        <div class="demo-footer">
-          <div class="demo-tech">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
+        <div class="demo-hover">
+          <h3>South Build — Standard</h3>
+          <p>A multi-page builder website with dedicated services, gallery and contact pages. Real photos, Google Maps and working navigation.</p>
+          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <a href="https://south-build-standard.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
         </div>
       </div>
     </div>
 
-    <!-- South Build Premium -->
     <div class="demo-card">
       <div class="demo-preview">
-        <iframe src="https://south-build-premium.vercel.app" title="South Build Premium"></iframe>
-        <div class="demo-preview-overlay"></div>
+        <iframe src="https://south-build-premium.vercel.app" title="South Build — Premium"></iframe>
         <div class="demo-tag">Premium — $2,199</div>
-      </div>
-      <div class="demo-info">
-        <h3>South Build — Premium</h3>
-        <p>The full premium experience. Photo slider, scroll animations, before & after tool, case studies, testimonials, FAQ and more.</p>
-        <div class="demo-footer">
-          <div class="demo-tech">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
+        <div class="demo-hover">
+          <h3>South Build — Premium</h3>
+          <p>The full premium experience. Photo slider, scroll animations, before & after tool, case studies, testimonials, FAQ and more.</p>
+          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <a href="https://south-build-premium.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
         </div>
       </div>
