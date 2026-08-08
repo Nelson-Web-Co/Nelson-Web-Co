@@ -109,6 +109,15 @@
   .pricing-preview-overlay { position: absolute; inset: 0; background: transparent; cursor: pointer; }
   .pricing-demo-btn { display: block; text-align: center; font-size: 12px; color: #3b9eff; font-weight: 600; text-decoration: none; padding: 6px; border: 1px solid rgba(59,158,255,0.3); border-radius: 8px; margin-bottom: 0.8rem; transition: all 0.2s; }
   .pricing-demo-btn:hover { background: rgba(59,158,255,0.1); }
+   .tier-diff {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+    margin: -0.4rem 0 0.8rem;
+  }
+  .tier-diff strong { color: #3b9eff; font-weight: 700; }
   .pricing-btn:hover { border-color: #3b9eff; color: #3b9eff; }
   .pricing-btn.featured-btn { background: #3b9eff; border-color: #3b9eff; color: #fff; box-shadow: 0 0 20px rgba(59,158,255,0.3); }
   .pricing-btn.featured-btn:hover { background: #2b8ef0; }
@@ -291,29 +300,136 @@
       <div class="service-icon">🌐</div>
       <h3>New websites</h3>
       <p>Built from scratch, mobile-friendly, performance optimised and ready to bring in customers from day one.</p>
-      <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">From $999 NZD</div>
     </div>
     <div class="service-card from-bottom delay-2">
       <div class="service-icon">✏️</div>
-      <h3>Site Fixes</h3>
+      <h3>Existing sites</h3>
       <p>Got something that needs updating or improving on your existing site? From small tweaks to full overhauls — get in touch for a free quote.</p>
-      <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
     </div>
     <div class="service-card from-bottom delay-3">
       <div class="service-icon">🔧</div>
       <h3>Maintenance</h3>
       <p>Keep your site fresh and running smoothly with monthly updates, fixes and support.</p>
-      <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">From $49/month</div>
     </div>
     <div class="service-card from-bottom delay-4">
       <div class="service-icon">🔍</div>
-      <h3>Basic SEO</h3>
+      <h3>SEO Setup</h3>
       <p>Every site includes basic on-page SEO — meta tags, page titles, alt text and Google submission so your site can actually be found.</p>
-      <div class="service-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Included in every build</div>
     </div>
   </div>
 </div>
+<!-- ================= WORK STRIP ================= -->
+<section class="nwc-work" id="work">
+  <div class="nwc-work__head">
+    <p class="nwc-work__eyebrow from-left">Demos</p>
+    <h2 class="nwc-work__title from-left delay-1">What I can build for you</h2>
+    <p class="nwc-work__sub from-left delay-2">Built from scratch to show what's possible — each one's a different style. Click through and see which fits your business.</p>
+  </div>
 
+  <div class="nwc-work__viewport">
+    <div class="nwc-work__track" id="nwcTrack"></div>
+  </div>
+
+  <p class="nwc-work__more"><a href="demos.html">See all demos &rarr;</a></p>
+</section>
+
+<style>
+.nwc-work {
+  --nwc-bg: #080810;
+  --nwc-accent: #3b9eff;
+  --nwc-text: #ffffff;
+  --nwc-muted: #8b97a6;
+  --nwc-card-border: rgba(255,255,255,0.1);
+  background: var(--nwc-bg);
+  padding: 88px 0;
+  overflow: hidden;
+}
+.nwc-work__head { max-width: 1100px; margin: 0 auto 40px; padding: 0 24px; }
+.nwc-work__eyebrow { color: var(--nwc-accent); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 10px; font-weight: 600; }
+.nwc-work__title { color: var(--nwc-text); font-size: clamp(28px, 5vw, 42px); font-weight: 600; line-height: 1.15; margin: 0 0 12px; letter-spacing: -.02em; }
+.nwc-work__sub { color: var(--nwc-muted); font-size: 17px; line-height: 1.5; margin: 0; max-width: 52ch; }
+.nwc-work__viewport { position: relative; width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.nwc-work__track { display: flex; gap: 20px; width: max-content; animation: nwc-scroll var(--nwc-duration, 40s) linear infinite; }
+.nwc-work__viewport:hover .nwc-work__track,
+.nwc-work__track:focus-within { animation-play-state: paused; }
+@keyframes nwc-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--nwc-shift, 0px))); } }
+.nwc-card { position: relative; flex: 0 0 auto; width: 400px; border-radius: 14px; overflow: hidden; border: 1px solid var(--nwc-card-border); background: #131c28; text-decoration: none; display: block; transition: transform .3s ease, border-color .3s ease; }
+.nwc-card:hover, .nwc-card:focus-visible { transform: translateY(-6px); border-color: var(--nwc-accent); }
+.nwc-card:focus-visible { outline: 2px solid var(--nwc-accent); outline-offset: 3px; }
+.nwc-card__shot { display: block; width: 100%; height: 190px; object-fit: cover; object-position: top center; background: #1b2532; }
+.nwc-card__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; }
+.nwc-card__name { color: var(--nwc-text); font-size: 15px; font-weight: 600; }
+.nwc-card__view { color: var(--nwc-accent); font-size: 13px; font-weight: 600; white-space: nowrap; opacity: 0; transform: translateX(-4px); transition: opacity .3s ease, transform .3s ease; }
+.nwc-card:hover .nwc-card__view, .nwc-card:focus-visible .nwc-card__view { opacity: 1; transform: translateX(0); }
+.nwc-work__more { max-width: 1100px; margin: 36px auto 0; padding: 0 24px; }
+.nwc-work__more a { color: var(--nwc-accent); font-size: 15px; font-weight: 600; text-decoration: none; }
+.nwc-work__more a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .nwc-work { padding: 64px 0; }
+  .nwc-card { width: 300px; }
+  .nwc-card__shot { height: 143px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nwc-work__track { animation: none; }
+  .nwc-work__viewport { overflow-x: auto; }
+}
+</style>
+
+<script>
+(function () {
+  // ---- EDIT THIS LIST ----
+  var DEMOS = [
+{ name: 'Harbour & Co — Real Estate', url: '#', shot: 'images/work/harbour-and-co.jpg' },
+    { name: 'Nelson Legal',               url: 'demos.html', shot: 'images/work/nelson-legal.jpg' },
+    { name: 'Anchor & Bloom — Café',      url: 'demos.html', shot: 'images/work/anchor-and-bloom.jpg' },
+    { name: 'The Garden Crew',            url: 'demos.html', shot: 'images/work/garden-crew.jpg' },
+    { name: 'Procoat NZ — Plastering',    url: 'demos.html', shot: 'images/work/procoat-nz.jpg' },
+  ];
+  var SECONDS_PER_CARD = 6;
+  // ------------------------
+
+  var track = document.getElementById('nwcTrack');
+  if (!track) return;
+
+  function card(d) {
+    var a = document.createElement('a');
+    a.className = 'nwc-card';
+    a.href = d.url;
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'View the ' + d.name + ' demo site');
+    var img = document.createElement('img');
+    img.className = 'nwc-card__shot';
+    img.src = d.shot;
+    img.alt = 'Screenshot of the ' + d.name + ' website';
+    img.loading = 'lazy';
+    var bar = document.createElement('div');
+    bar.className = 'nwc-card__bar';
+    bar.innerHTML = '<span class="nwc-card__name"></span><span class="nwc-card__view">View live &rarr;</span>';
+    bar.querySelector('.nwc-card__name').textContent = d.name;
+    a.appendChild(img);
+    a.appendChild(bar);
+    return a;
+  }
+
+  DEMOS.forEach(function (d) { track.appendChild(card(d)); });
+  DEMOS.forEach(function (d) {
+    var clone = card(d);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.tabIndex = -1;
+    track.appendChild(clone);
+  });
+
+  requestAnimationFrame(function () {
+    var first = track.children[0];
+    if (!first) return;
+    var shift = (first.getBoundingClientRect().width + 20) * DEMOS.length;
+    var section = track.closest('.nwc-work');
+    section.style.setProperty('--nwc-shift', shift + 'px');
+    section.style.setProperty('--nwc-duration', (DEMOS.length * SECONDS_PER_CARD) + 's');
+  });
+})();
+</script>
+<!-- =============== END WORK STRIP =============== -->
 <div class="section" id="pricing" style="padding-top: 0;">
   <div class="section-label from-left">Pricing</div>
   <h2 class="from-left delay-1">Honest pricing, no hidden costs</h2>
@@ -327,13 +443,14 @@
         <a href="https://south-build-starter.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
       </div>
       <a href="https://south-build-starter.vercel.app" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
+      <span class="tier-diff"><strong>1 page</strong> · contact form</span>
       <h3>Starter</h3>
       <div class="pricing-amount">From $999 <small>NZD</small></div>
       <ul class="pricing-features">
         <li>Single page website</li>
         <li>Mobile friendly</li>
         <li>Contact form</li>
-        <li>Basic SEO setup</li>
+        <li>SEO setup</li>
         <li>Live on the web</li>
       </ul>
       <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
@@ -353,7 +470,7 @@
         <li>Services & gallery page</li>
         <li>Photo gallery included</li>
         <li>Custom branding</li>
-        <li>Basic SEO setup</li>
+        <li>SEO setup</li>
       </ul>
       <div class="pricing-btn featured-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
@@ -371,7 +488,7 @@
         <li>Quote/booking form</li>
         <li>Image gallery</li>
         <li>Priority turnaround</li>
-        <li>Basic SEO setup</li>
+        <li>SEO setup</li>
       </ul>
       <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
@@ -396,19 +513,19 @@
       <div class="service-icon">⚙️</div>
       <h3>Small fixes</h3>
       <p>Text updates, image swaps, colour changes and minor layout tweaks.</p>
-      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
+      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Send me the details</div>
     </div>
     <div class="mod-card">
       <div class="service-icon">📐</div>
       <h3>Page overhaul</h3>
       <p>Overhaul of your existing single page site with improved layout, content and modern styling.</p>
-      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
+      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Show me the page</div>
     </div>
     <div class="mod-card">
       <div class="service-icon">🔄</div>
       <h3>Full redesign</h3>
       <p>Complete visual overhaul of your existing site. Same content, brand new look.</p>
-      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a quote</div>
+      <div class="mod-price" style="cursor:pointer;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's talk about it</div>
     </div>
   </div>
   <p class="rebrand-note">Every existing site is different — get in touch and I'll give you an honest price within 24 hours.</p>
@@ -416,7 +533,7 @@
   <div class="divider-label from-bottom"><div class="divider-line"></div><span>Ongoing maintenance</span><div class="divider-line"></div></div>
   <div class="maint-grid">
     <div class="maint-card from-bottom delay-1">
-      <div class="service-icon">🌐</div>
+      <div class="service-icon">☁️</div>
       <h3>Hosting Only</h3>
       <ul class="maint-features">
         <li>Hosting included</li>
@@ -574,24 +691,100 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }, { threshold: 0.1 });
   animEls.forEach(el => observer.observe(el));
 </script>
-
-
-<a class="scroll-top" id="scrollTop" href="#top">↑</a>
+<!-- ============= FLOWING CODE BACKGROUND ============= -->
+<style>
+#nwcCodeCanvas { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.nwc-hero-veil { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse 620px 340px at 50% 50%, rgba(8,8,16,.92) 0%, rgba(8,8,16,.75) 42%, transparent 78%); }
+.hero-content { z-index: 2; }
+</style>
 
 <script>
-  window.addEventListener('scroll', function(){
-    const btn = document.getElementById('scrollTop');
-    if(window.scrollY > 400){ btn.classList.add('visible'); }
-    else { btn.classList.remove('visible'); }
-  });
-  const animEls = document.querySelectorAll('.from-left, .from-right, .from-bottom');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){ e.target.classList.add('visible'); }
-      else { e.target.classList.remove('visible'); }
-    });
-  }, { threshold: 0.1 });
-  animEls.forEach(el => observer.observe(el));
+(function () {
+  var wrap = document.querySelector('.hero-wrapper');
+  if (!wrap) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // ---- TUNE THESE ----
+  var STRENGTH = 2;     // visibility of the code
+  var COUNT    = 22;    // how many lines on screen at once
+  var SNIPPETS = [
+    'const site = build(client);',
+    'if (mobile) { optimise(); }',
+    'export default function Hero() {',
+    '.hero { display: flex; }',
+    'return <Layout>{children}</Layout>;',
+    'await deploy(project);',
+    'npm run build',
+    'git commit -m "ship it"',
+    'function contact(form) {',
+    '@media (max-width: 768px) {',
+    'document.querySelector(".cta")',
+    'body { background: #080810; }',
+    'fetch("/api/enquiry")',
+    'let leads = getEnquiries();'
+  ];
+  // --------------------
+
+  var canvas = document.createElement('canvas');
+  canvas.id = 'nwcCodeCanvas';
+  var veil = document.createElement('div');
+  veil.className = 'nwc-hero-veil';
+
+  var content = wrap.querySelector('.hero-content');
+  wrap.insertBefore(canvas, content);
+  wrap.insertBefore(veil, content);
+
+  var ctx = canvas.getContext('2d');
+  var lines = [], W = 0, H = 0;
+
+  function size() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = wrap.offsetWidth;
+    H = wrap.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    lines = [];
+    for (var i = 0; i < COUNT; i++) {
+      lines.push({
+        text: SNIPPETS[Math.floor(Math.random() * SNIPPETS.length)],
+        x: Math.random() * W,
+        y: Math.random() * H,
+        speed: 0.12 + Math.random() * 0.3,
+        alpha: 0.05 + Math.random() * 0.13
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.font = '14px ui-monospace, Menlo, Consolas, monospace';
+    for (var i = 0; i < lines.length; i++) {
+      var l = lines[i];
+      ctx.fillStyle = 'rgba(59,158,255,' + Math.min(l.alpha * STRENGTH, 0.9) + ')';
+      ctx.fillText(l.text, l.x, l.y);
+      l.y -= l.speed;
+      if (l.y < -20) {
+        l.y = H + 20;
+        l.x = Math.random() * W;
+        l.text = SNIPPETS[Math.floor(Math.random() * SNIPPETS.length)];
+        l.alpha = 0.05 + Math.random() * 0.13;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', size);
+  size();
+  draw();
+})();
 </script>
+<!-- =========== END FLOWING CODE BACKGROUND =========== -->
 </body>
 </html>
+
+
