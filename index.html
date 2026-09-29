@@ -106,6 +106,7 @@
   .pricing-btn { margin-top: auto; background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; transition: all 0.2s; }
   .pricing-preview { width: calc(100% + 4rem); margin-left: -2rem; margin-top: -2rem; height: 300px; overflow: hidden; position: relative; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.2rem; border-radius: 16px 16px 0 0; }
   .pricing-preview iframe { width: 200%; height: 200%; transform: scale(0.5); transform-origin: top left; pointer-events: none; border: none; }
+  .pricing-preview-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .pricing-preview-overlay { position: absolute; inset: 0; background: transparent; cursor: pointer; }
   .pricing-demo-btn { display: block; text-align: center; font-size: 12px; color: #3b9eff; font-weight: 600; text-decoration: none; padding: 6px; border: 1px solid rgba(59,158,255,0.3); border-radius: 8px; margin-bottom: 0.8rem; transition: all 0.2s; }
   .pricing-demo-btn:hover { background: rgba(59,158,255,0.1); }
@@ -385,6 +386,7 @@
     { name: 'Anchor & Bloom — Café',      url: 'demos.html', shot: 'images/work/anchor-and-bloom.jpg' },
     { name: 'The Garden Crew',            url: 'demos.html', shot: 'images/work/garden-crew.jpg' },
     { name: 'Procoat NZ — Plastering',    url: 'demos.html', shot: 'images/work/procoat-nz.jpg' },
+    { name: 'Southern Line — Ecommerce',  url: 'demos.html', shot: 'images/work/southern-line.jpg' },
   ];
   var SECONDS_PER_CARD = 6;
   // ------------------------
@@ -495,7 +497,12 @@
       <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
     <div class="pricing-card">
-      <div style="width:44px;height:44px;background:rgba(59,158,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid rgba(59,158,255,0.2);margin-bottom:0.8rem;">🛠️</div>
+      <div class="pricing-preview from-bottom">
+        <img src="images/work/southern-line-preview.jpg" alt="Southern Line e-commerce demo, outfit builder" class="pricing-preview-img" loading="lazy">
+        <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" class="pricing-preview-overlay"></a>
+      </div>
+      <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
+      <span class="tier-diff"><strong>E-commerce</strong> · cart · outfit builder</span>
       <h3>Custom Build</h3>
       <div class="pricing-amount">Let's talk <small></small></div>
       <ul class="pricing-features">
