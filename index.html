@@ -92,7 +92,7 @@
   .service-price { font-size: 14px; color: #3b9eff; font-weight: 700; margin-top: auto; padding-top: 0.5rem; }
 
   /* PRICING */
-  .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 3rem; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 3rem; }
   .pricing-card { background: #0c0c18; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 0.8rem; transition: all 0.2s; overflow: hidden; }
   .pricing-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
   .pricing-card.featured { border: 2px solid #3b9eff; background: rgba(59,158,255,0.05); position: relative; padding-top: 0; overflow: hidden; }
@@ -441,74 +441,57 @@
 
   <div class="divider-label from-bottom"><div class="divider-line"></div><span>New websites</span><div class="divider-line"></div></div>
   <div class="pricing-grid">
-    <div class="pricing-card from-bottom delay-1">
+    <div class="pricing-card featured from-bottom delay-1">
       <div class="pricing-preview from-bottom">
-        <iframe src="https://south-build-starter.vercel.app" scrolling="no" loading="lazy"></iframe>
-        <a href="https://south-build-starter.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
+        <iframe src="https://south-build-premium.vercel.app" scrolling="no" loading="lazy"></iframe>
+        <a href="https://south-build-premium.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
+        <div class="pricing-badge" style="position:absolute;top:12px;left:12px;z-index:2;">Most popular</div>
       </div>
-      <a href="https://south-build-starter.vercel.app" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
-      <span class="tier-diff"><strong>1 page</strong> · contact form</span>
-      <h3>Starter</h3>
+      <a href="demos.html" class="pricing-demo-btn">👁 See what your website could look like →</a>
+      <span class="tier-diff"><strong>Built for your business</strong> · mobile friendly</span>
+      <h3>Business Website</h3>
       <div class="pricing-amount">From $999 <small>NZD</small></div>
       <ul class="pricing-features">
-        <li>Single page website</li>
+        <li>Up to 4–5 pages</li>
         <li>Mobile friendly</li>
         <li>Contact form</li>
-        <li>SEO setup</li>
-        <li>Live on the web</li>
-      </ul>
-      <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
-    </div>
-    <div class="pricing-card featured from-bottom delay-2">
-      <div class="pricing-preview from-bottom">
-        <iframe src="https://south-build-standard.vercel.app" scrolling="no" loading="lazy"></iframe>
-        <a href="https://south-build-standard.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
-        <div class="pricing-badge" style="position:absolute;top:12px;left:12px;z-index:2;">Recommended</div>
-      </div>
-      <a href="https://south-build-standard.vercel.app" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
-      <h3>Standard</h3>
-      <div class="pricing-amount">From $1,499 <small>NZD</small></div>
-      <ul class="pricing-features">
-        <li>4–5 pages</li>
-        <li>Everything in Starter</li>
-        <li>Services & gallery page</li>
-        <li>Photo gallery included</li>
+        <li>Photo gallery</li>
         <li>Custom branding</li>
         <li>SEO setup</li>
       </ul>
       <div class="pricing-btn featured-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
     </div>
-    <div class="pricing-card from-bottom delay-3">
-      <div class="pricing-preview from-bottom">
-        <iframe src="https://south-build-premium.vercel.app" scrolling="no" loading="lazy"></iframe>
-        <a href="https://south-build-premium.vercel.app" target="_blank" class="pricing-preview-overlay"></a>
-      </div>
-      <a href="https://south-build-premium.vercel.app" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
-      <h3>Premium</h3>
-      <div class="pricing-amount">From $2,199 <small>NZD</small></div>
-      <ul class="pricing-features">
-        <li>6+ pages</li>
-        <li>Everything in Standard</li>
-        <li>Quote/booking form</li>
-        <li>Image gallery</li>
-        <li>Priority turnaround</li>
-        <li>SEO setup</li>
-      </ul>
-      <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
-    </div>
-    <div class="pricing-card">
+    <div class="pricing-card from-bottom delay-2">
       <div class="pricing-preview from-bottom">
         <img src="images/work/southern-line-preview.jpg" alt="Southern Line e-commerce demo, outfit builder" class="pricing-preview-img" loading="lazy">
         <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" class="pricing-preview-overlay"></a>
       </div>
       <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
       <span class="tier-diff"><strong>E-commerce</strong> · cart · outfit builder</span>
+      <h3>Online Store</h3>
+      <div class="pricing-amount">From $2,499 <small>NZD</small></div>
+      <ul class="pricing-features">
+        <li>Product pages & categories</li>
+        <li>Shopping cart & checkout</li>
+        <li>Mobile friendly</li>
+        <li>Custom features, like an outfit builder</li>
+        <li>SEO setup</li>
+      </ul>
+      <div class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</div>
+    </div>
+    <div class="pricing-card from-bottom delay-3">
+      <div class="pricing-preview from-bottom">
+        <iframe src="https://luxury-hotel-tour-website.vercel.app/" scrolling="no" loading="lazy"></iframe>
+        <a href="https://luxury-hotel-tour-website.vercel.app/" target="_blank" class="pricing-preview-overlay"></a>
+      </div>
+      <a href="https://luxury-hotel-tour-website.vercel.app/" target="_blank" class="pricing-demo-btn">👁 Preview live demo →</a>
+      <span class="tier-diff"><strong>360° tour</strong> · custom tools</span>
       <h3>Custom Build</h3>
       <div class="pricing-amount">Let's talk <small></small></div>
       <ul class="pricing-features">
-        <li>E-commerce & online store</li>
         <li>Booking systems</li>
-        <li>Custom functionality</li>
+        <li>360° virtual tours</li>
+        <li>Custom tools, like a wheel visualiser</li>
         <li>Larger multi-page builds</li>
         <li>Tailored to your business</li>
       </ul>
@@ -630,9 +613,8 @@
       <div class="form-group"><label>Business name</label><input type="text" name="business" placeholder="e.g. Nelson Plumbing Co" /></div>
       <div class="form-group"><label>What do you need?</label>
         <select name="service">
-          <option>New website — Starter (from $999)</option>
-          <option>New website — Standard (from $1,499)</option>
-          <option>New website — Premium (from $2,199)</option>
+          <option>New website (from $999)</option>
+          <option>Online store (from $2,499)</option>
           <option>Custom / large project</option>
           <option>Redesign existing site</option>
           <option>Small fixes</option>
