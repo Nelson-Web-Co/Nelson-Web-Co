@@ -2,267 +2,200 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google-site-verification" content="HaGPNc2p8Zy20Klq8-xdVHNBs4ULUk2R-k86jiQSSO0" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-174FRW5CZJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-174FRW5CZJ');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demos | Nelson Web Co</title>
+<title>Work and Demo Websites | Nelson Web Co | Web Design Nelson</title>
+<meta name="description" content="Websites built by Nelson Web Co, a local web designer in Nelson. Tradie, café, real estate, law firm, online store and 360° tour examples.">
+<meta property="og:title" content="Work and Demo Websites | Nelson Web Co | Web Design Nelson">
+<meta property="og:description" content="Websites built by Nelson Web Co, a local web designer in Nelson. Tradie, café, real estate, law firm, online store and 360° tour examples.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nelsonwebco.co.nz/demos.html">
+<meta property="og:image" content="https://nelsonwebco.co.nz/images/hero-tahuna.jpg">
+<link rel="canonical" href="https://nelsonwebco.co.nz/demos.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'Inter', sans-serif; background:#0c0c18; color:#fff; }
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Inter:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
-  /* NAV */
-  .nav { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 2.5rem; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(8,8,16,0.95); position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
-  .nav-logo { font-size:18px; font-weight:800; color:#fff; text-decoration:none; }
-  .nav-logo span { color:#3b9eff; }
-  .nav-links { display:flex; gap:2rem; }
-  .nav-links a { font-size:13px; color:#fff; text-decoration:none; cursor:pointer; transition:color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color:#3b9eff; }
-  .nav-cta { background:#3b9eff; color:#fff; border:none; padding:9px 20px; border-radius:6px; font-size:13px; cursor:pointer; font-weight:700; transition:background 0.2s; text-decoration:none; }
-  .nav-cta:hover { background:#2b8ef0; }
-
-  /* HERO */
-  .hero { padding:80px 2.5rem 60px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.06); }
-  .hero-label { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#3b9eff; margin-bottom:16px; }
-  .hero h1 { font-size:clamp(2rem, 5vw, 3.2rem); font-weight:800; margin-bottom:16px; }
-  .hero p { color:rgba(255,255,255,0.55); font-size:1rem; max-width:560px; margin:0 auto; line-height:1.7; }
-
-  /* DEMOS GRID */
-  .demos { padding:60px 2.5rem 100px; max-width:1200px; margin:0 auto; }
-  .demos-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:32px; }
-
-  .demo-card {
-    background:#13131f;
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px;
-    overflow:hidden;
-    position:relative;
-    transition:transform .3s ease, box-shadow .3s ease;
-  }
-  .demo-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
-
-  .demo-preview {
-    position:relative; overflow:hidden;
-    height:280px; background:#0a0a14;
-  }
-  .demo-preview iframe {
-    width:200%; height:200%;
-    transform:scale(0.5); transform-origin:top left;
-    border:none; pointer-events:none;
-  }
-  .demo-tag { display:none; }
-
-  /* Hover overlay */
-  .demo-hover {
-    position:absolute; inset:0; z-index:3;
-    background:rgba(10,10,20,0.92);
-    display:flex; flex-direction:column;
-    justify-content:center; align-items:center;
-    padding:28px; text-align:center;
-    opacity:0; transform:translateY(10px);
-    transition:opacity .3s ease, transform .3s ease;
-  }
-  .demo-card:hover .demo-hover { opacity:1; transform:translateY(0); }
-  .demo-hover h3 { font-size:1.2rem; font-weight:700; color:#fff; margin-bottom:10px; }
-  .demo-hover p { color:rgba(255,255,255,0.7); font-size:.88rem; line-height:1.65; margin-bottom:20px; }
-  .demo-hover-footer { display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; }
-  .demo-tech { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; }
-  .demo-tech span {
-    background:rgba(255,255,255,0.1);
-    border:1px solid rgba(255,255,255,0.2);
-    color:rgba(255,255,255,0.8);
-    font-size:10px; font-weight:600;
-    padding:3px 8px; border-radius:4px;
-  }
-  .demo-btn {
-    background:#3b9eff; color:#fff;
-    padding:10px 22px; border-radius:6px;
-    font-size:12px; font-weight:700;
-    text-decoration:none; white-space:nowrap;
-    transition:background .2s; margin-top:8px;
-  }
-  .demo-btn:hover { background:#2b8ef0; }
-  .demo-btn {
-    background:#3b9eff; color:#fff;
-    padding:9px 20px; border-radius:6px;
-    font-size:12px; font-weight:700;
-    text-decoration:none; white-space:nowrap;
-    transition:background .2s;
-  }
-  .demo-btn:hover { background:#2b8ef0; }
-
-  /* CTA */
-  .cta { text-align:center; padding:60px 2.5rem; border-top:1px solid rgba(255,255,255,0.06); }
-  .cta h2 { font-size:1.8rem; font-weight:800; margin-bottom:12px; }
-  .cta p { color:rgba(255,255,255,0.5); margin-bottom:28px; }
-  .cta-btn { background:#3b9eff; color:#fff; padding:13px 32px; border-radius:8px; font-size:.95rem; font-weight:700; text-decoration:none; transition:background .2s; }
-  .cta-btn:hover { background:#2b8ef0; }
-
-  /* FOOTER */
-  footer { text-align:center; padding:28px; border-top:1px solid rgba(255,255,255,0.06); color:rgba(255,255,255,0.3); font-size:.82rem; }
-
-  @media (max-width:768px) {
-    .nav-links { display:none; }
-    .demos-grid { grid-template-columns:1fr; }
-    .hero { padding:60px 1.5rem 40px; }
-    .demos { padding:40px 1.5rem 60px; }
-  }
-</style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">Nelson<span>Web</span>Co</a>
-  <div class="nav-links">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="demos.html" class="active">Demos</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
+<header class="nav solid" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="Nelson Web Co home">Nelson<span>Web</span>Co</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub"><a href="web-design-nelson.html" class="sub-toggle">Services</a>
+        <ul class="sub">
+          <li><a href="web-design-nelson.html">Website design</a></li>
+          <li><a href="online-stores-nelson.html">Online stores</a></li>
+          <li><a href="website-care-nelson.html">Website care and hosting</a></li>
+          <li><a href="web-design-for-tradies-nelson.html">Websites for tradies</a></li>
+        </ul>
+      </li>
+      <li><a href="demos.html" aria-current="page">Work</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="btn">Get a free quote</a></li>
+    </ul>
   </div>
-  <a href="index.html#contact" class="nav-cta">Get a free quote</a>
-</nav>
+</header>
 
-<div class="hero">
-  <div class="hero-label">Our Work</div>
-  <h1>Demo Sites</h1>
-  <p>Browse through websites I've built. Every site is fully responsive, fast and mobile friendly. Click any demo to see the full live site.</p>
-</div>
+<main>
 
-<div class="demos">
-    <div class="demos-grid">
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://the-garden-crew.vercel.app" title="The Garden Crew"></iframe>
-        <div class="demo-tag">Gardening</div>
-        <div class="demo-hover">
-          <h3>The Garden Crew</h3>
-          <p>A clean, natural gardening services website with photo gallery, services section and contact form. Light and professional.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://the-garden-crew.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
-          <a href="web-design-for-tradies-nelson.html" style="display:block;margin-top:10px;font-size:11px;color:rgba(255,255,255,0.5);text-decoration:underline;">Building for a trade? See what's included →</a>
-        </div>
+  <div class="banner plain">
+    <div class="banner-inner">
+      <div class="banner-box">
+        <h1>Demo websites</h1>
+        <p>Sites I've built to show what I can do for different kinds of business. Open any of them to try the full site.</p>
       </div>
     </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://pro-coat-nz.vercel.app" title="Pro Coat NZ"></iframe>
-        <div class="demo-tag">Plastering & Painting</div>
-        <div class="demo-hover">
-          <h3>Pro Coat NZ</h3>
-          <p>A polished plastering and painting company site with photo slideshow, parallax effects, scroll animations and contact form.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://pro-coat-nz.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
-          <a href="web-design-for-tradies-nelson.html" style="display:block;margin-top:10px;font-size:11px;color:rgba(255,255,255,0.5);text-decoration:underline;">Building for a trade? See what's included →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://south-build-standard.vercel.app" title="South Build: Multi-page Site"></iframe>
-        <div class="demo-tag">Builder</div>
-        <div class="demo-hover">
-          <h3>South Build: Multi-page Site</h3>
-          <p>A multi-page builder website with dedicated services, gallery and contact pages. Real photos, Google Maps and working navigation.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://south-build-standard.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://south-build-premium.vercel.app" title="South Build: Full Feature Site"></iframe>
-        <div class="demo-tag">Builder</div>
-        <div class="demo-hover">
-          <h3>South Build: Full Feature Site</h3>
-          <p>Every feature in one site. Photo slider, scroll animations, before & after tool, case studies, testimonials, FAQ and more.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://south-build-premium.vercel.app" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://anchor-bloom.vercel.app/" title="Anchor & Bloom"></iframe>
-        <div class="demo-tag">Café</div>
-        <div class="demo-hover">
-          <h3>Anchor & Bloom</h3>
-          <p>A warm, inviting café website with full menu, photo gallery and online enquiry form, designed to feel like stepping through the door.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://anchor-bloom.vercel.app/" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://harbor-co.vercel.app/" title="Harbour & Co"></iframe>
-        <div class="demo-tag">Real Estate</div>
-        <div class="demo-hover">
-          <h3>Harbour & Co</h3>
-          <p>A premium real estate site with a rotating hero showcase, full property listings and a full-scale photo gallery viewer for each home.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://harbor-co.vercel.app/" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://nelson-legal.vercel.app/" title="Nelson Legal"></iframe>
-        <div class="demo-tag">Law Firm</div>
-        <div class="demo-hover">
-          <h3>Nelson Legal</h3>
-          <p>A polished, trustworthy law firm site with practice areas, team profiles and a straightforward consultation booking form.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://nelson-legal.vercel.app/" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://luxury-hotel-tour-website.vercel.app/" title="360° Virtual Tour"></iframe>
-        <div class="demo-tag">360° Virtual Tour</div>
-        <div class="demo-hover">
-          <h3>360° Virtual Tour</h3>
-          <p>An interactive 360° walkthrough letting customers explore a property from their phone. Click, drag and walk between rooms. No app or headset needed.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://luxury-hotel-tour-website.vercel.app/" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-    <div class="demo-card">
-      <div class="demo-preview">
-        <iframe src="https://southern-line-site-ecommerce.vercel.app/" title="Southern Line"></iframe>
-        <div class="demo-tag">Ecommerce</div>
-        <div class="demo-hover">
-          <h3>Southern Line</h3>
-          <p>A full ski and snowboard ecommerce concept with a live outfit builder, terrain-based gear kits and a full product catalogue with cart. Built to show what's possible beyond a normal brochure site.</p>
-          <div class="demo-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" class="demo-btn">View Demo →</a>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
 
-<div class="cta">
-  <h2>Want a site like one of these?</h2>
-  <p>Get in touch for a free quote. No obligation.</p>
-  <a href="index.html#contact" class="cta-btn">Get a Free Quote</a>
-</div>
+  <section>
+    <div class="wrap demo-list">
+      <article class="demo">
+        <a class="frame" href="https://the-garden-crew.vercel.app" target="_blank" rel="noopener" aria-label="Open the The Garden Crew demo">
+          <iframe src="https://the-garden-crew.vercel.app" title="The Garden Crew preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Gardening</div>
+          <h2>The Garden Crew</h2>
+          <p>A clean, natural gardening services website with a photo gallery, services section and contact form.</p>
+          <a href="https://the-garden-crew.vercel.app" target="_blank" rel="noopener" class="view">View live demo</a>
+          <a href="web-design-for-tradies-nelson.html" class="sub-link">Websites for tradies</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://pro-coat-nz.vercel.app" target="_blank" rel="noopener" aria-label="Open the Pro Coat NZ demo">
+          <iframe src="https://pro-coat-nz.vercel.app" title="Pro Coat NZ preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Plastering and painting</div>
+          <h2>Pro Coat NZ</h2>
+          <p>A polished plastering and painting company site with a photo slideshow, scroll effects and a contact form.</p>
+          <a href="https://pro-coat-nz.vercel.app" target="_blank" rel="noopener" class="view">View live demo</a>
+          <a href="web-design-for-tradies-nelson.html" class="sub-link">Websites for tradies</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://south-build-standard.vercel.app" target="_blank" rel="noopener" aria-label="Open the South Build: Multi-page Site demo">
+          <iframe src="https://south-build-standard.vercel.app" title="South Build: Multi-page Site preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Builder</div>
+          <h2>South Build: Multi-page Site</h2>
+          <p>A multi-page builder website with separate services, gallery and contact pages, real photos and Google Maps.</p>
+          <a href="https://south-build-standard.vercel.app" target="_blank" rel="noopener" class="view">View live demo</a>
+          <a href="web-design-for-tradies-nelson.html" class="sub-link">Websites for tradies</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://south-build-premium.vercel.app" target="_blank" rel="noopener" aria-label="Open the South Build: Full Feature Site demo">
+          <iframe src="https://south-build-premium.vercel.app" title="South Build: Full Feature Site preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Builder</div>
+          <h2>South Build: Full Feature Site</h2>
+          <p>Every feature in one site: photo slider, before and after tool, case studies, testimonials and FAQs.</p>
+          <a href="https://south-build-premium.vercel.app" target="_blank" rel="noopener" class="view">View live demo</a>
+          <a href="web-design-for-tradies-nelson.html" class="sub-link">Websites for tradies</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://anchor-bloom.vercel.app/" target="_blank" rel="noopener" aria-label="Open the Anchor &amp; Bloom demo">
+          <iframe src="https://anchor-bloom.vercel.app/" title="Anchor &amp; Bloom preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Café</div>
+          <h2>Anchor &amp; Bloom</h2>
+          <p>A warm, inviting café website with a full menu, photo gallery and online enquiry form.</p>
+          <a href="https://anchor-bloom.vercel.app/" target="_blank" rel="noopener" class="view">View live demo</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://harbor-co.vercel.app/" target="_blank" rel="noopener" aria-label="Open the Harbour &amp; Co demo">
+          <iframe src="https://harbor-co.vercel.app/" title="Harbour &amp; Co preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Real estate</div>
+          <h2>Harbour &amp; Co</h2>
+          <p>A real estate site with a rotating showcase, full property listings and a photo gallery for each home.</p>
+          <a href="https://harbor-co.vercel.app/" target="_blank" rel="noopener" class="view">View live demo</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://nelson-legal.vercel.app/" target="_blank" rel="noopener" aria-label="Open the Nelson Legal demo">
+          <iframe src="https://nelson-legal.vercel.app/" title="Nelson Legal preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Law firm</div>
+          <h2>Nelson Legal</h2>
+          <p>A trustworthy law firm site with practice areas, team profiles and a consultation booking form.</p>
+          <a href="https://nelson-legal.vercel.app/" target="_blank" rel="noopener" class="view">View live demo</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://luxury-hotel-tour-website.vercel.app/" target="_blank" rel="noopener" aria-label="Open the 360° Virtual Tour demo">
+          <iframe src="https://luxury-hotel-tour-website.vercel.app/" title="360° Virtual Tour preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Virtual tour</div>
+          <h2>360° Virtual Tour</h2>
+          <p>An interactive 360° walkthrough. Customers can explore a property from their phone, no app or headset needed.</p>
+          <a href="https://luxury-hotel-tour-website.vercel.app/" target="_blank" rel="noopener" class="view">View live demo</a>
+        </div>
+      </article>
+      <article class="demo">
+        <a class="frame" href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" rel="noopener" aria-label="Open the Southern Line demo">
+          <iframe src="https://southern-line-site-ecommerce.vercel.app/" title="Southern Line preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        </a>
+        <div class="demo-info">
+          <div class="kind">Online store</div>
+          <h2>Southern Line</h2>
+          <p>A ski and snowboard store concept with a live outfit builder, gear kits and a full product catalogue with cart.</p>
+          <a href="https://southern-line-site-ecommerce.vercel.app/" target="_blank" rel="noopener" class="view">View live demo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Want a site like one of these?</h2>
+      <p>Get in touch and I'll get back to you within 24 hours with a quote.</p>
+      <div class="actions"><a href="contact.html" class="btn">Get a free quote</a><a href="tel:0272954838" class="phone-link">Or call 027 295 4838</a></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  © 2026 Nelson Web Co · Nelson, NZ · <a href="index.html" style="color:rgba(255,255,255,0.4); text-decoration:none;">Back to Home</a>
+  <div class="wrap">
+    <div>
+      <a href="index.html" class="logo">Nelson<span>Web</span>Co</a>
+      <p style="margin-top:12px;">Web design and website design in Nelson, Tasman and NZ wide.<br><a href="tel:0272954838">027 295 4838</a> · <a href="mailto:blake@nelsonwebco.co.nz">blake@nelsonwebco.co.nz</a><br>© <span id="yr">2026</span> Nelson Web Co</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="web-design-nelson.html">Website design</a><a href="online-stores-nelson.html">Online stores</a><a href="website-care-nelson.html">Website care</a><a href="web-design-for-tradies-nelson.html">Websites for tradies</a><a href="demos.html">Work</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </footer>
 
+<button class="top-btn" id="topBtn" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<a class="call-fab" href="tel:0272954838" aria-label="Call Blake">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+</a>
+<script src="site.js"></script>
 </body>
 </html>
