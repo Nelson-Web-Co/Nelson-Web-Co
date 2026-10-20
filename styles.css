@@ -363,3 +363,10 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
   }
   @media (max-width:560px){ .banner.plain{padding:118px 0 40px;} .banner.plain .banner-inner{padding:0 20px;} }
+
+  /* photo header with the text on the left (keeps the island clear) */
+  .banner.left{justify-content:flex-start;}
+  .banner.left .banner-inner{margin-left:max(0px,calc((100% - var(--wrap)) / 2 + 8px));align-items:flex-start;text-align:left;max-width:520px;}
+  .banner.left .banner-box p{margin:0;}
+  .banner.left .actions{justify-content:flex-start;}
+  @media (max-width:900px){ .banner.left{background-position:62% 80% !important;} .banner.left .banner-inner{margin-left:0;} }
